@@ -1,4 +1,4 @@
-package linecodes.hamming
+package linearcodes.hamming
 
 import org.junit.Test
 import java.util.concurrent.ThreadLocalRandom

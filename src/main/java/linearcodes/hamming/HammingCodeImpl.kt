@@ -1,6 +1,6 @@
-package linecodes.hamming
+package linearcodes.hamming
 
-import linecodes.Utils
+import linearcodes.Utils
 import java.util.*
 import java.util.stream.IntStream.range
 import kotlin.collections.ArrayList

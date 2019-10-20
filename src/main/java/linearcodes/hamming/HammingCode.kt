@@ -1,4 +1,4 @@
-package linecodes.hamming
+package linearcodes.hamming
 
 /**
  * [Wiki](https://en.wikipedia.org/wiki/Hamming_code)

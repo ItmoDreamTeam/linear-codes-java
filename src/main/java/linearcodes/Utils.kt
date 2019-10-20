@@ -1,4 +1,4 @@
-package linecodes
+package linearcodes
 
 object Utils {
 
