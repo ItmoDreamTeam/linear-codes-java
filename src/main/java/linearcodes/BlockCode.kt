@@ -1,6 +1,6 @@
-package linearcodes.ldpc
+package linearcodes
 
-interface LdpcCode {
+interface BlockCode {
 
     fun encodeBlock(input: String): String
 

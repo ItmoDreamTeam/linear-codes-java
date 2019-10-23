@@ -1,6 +1,6 @@
-package linearcodes.hamming
+package linearcodes
 
-import linearcodes.Utils
+import linearcodes.utils.Utils
 import java.util.*
 import java.util.stream.IntStream.range
 import kotlin.collections.ArrayList
@@ -9,7 +9,11 @@ import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.streams.toList
 
-class HammingCodeImpl : HammingCode {
+/**
+ * [Wiki](https://en.wikipedia.org/wiki/Hamming_code)
+ * [Simple Explanation](https://www.youtube.com/watch?v=373FUw-2U2k)
+ */
+class HammingCode : BlockCode {
 
     private val parityBitsIndices = range(0, 128).map { 2.0.pow(it).roundToInt() }.toList().toSet()
 

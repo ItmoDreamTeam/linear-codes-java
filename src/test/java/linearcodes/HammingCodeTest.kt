@@ -1,4 +1,4 @@
-package linearcodes.hamming
+package linearcodes
 
 import org.junit.Test
 import java.util.concurrent.ThreadLocalRandom
@@ -6,7 +6,7 @@ import kotlin.test.assertEquals
 
 class HammingCodeTest {
 
-    private val hammingCode: HammingCode = HammingCodeImpl()
+    private val hammingCode: HammingCode = HammingCode()
 
     @Test
     fun testEncodingBlock() {

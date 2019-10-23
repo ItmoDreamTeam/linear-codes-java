@@ -1,4 +1,4 @@
-package linearcodes
+package linearcodes.utils
 
 import org.junit.Test
 import kotlin.test.assertEquals

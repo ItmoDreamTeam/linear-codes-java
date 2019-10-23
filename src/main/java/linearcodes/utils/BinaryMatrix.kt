@@ -1,4 +1,4 @@
-package linearcodes
+package linearcodes.utils
 
 import java.util.stream.IntStream.range
 

@@ -1,4 +1,4 @@
-package linearcodes.ldpc
+package linearcodes
 
 import org.junit.Test
 import java.util.concurrent.ThreadLocalRandom
@@ -7,7 +7,7 @@ import kotlin.test.fail
 
 class LdpcCodeTest {
 
-    private val ldpcCode: LdpcCode = LdpcCodeImpl()
+    private val ldpcCode: LdpcCode = LdpcCode()
 
     @Test
     fun testEncodingAndDecoding() {

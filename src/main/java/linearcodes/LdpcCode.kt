@@ -1,12 +1,12 @@
-package linearcodes.ldpc
+package linearcodes
 
-import linearcodes.BinaryMatrix
-import linearcodes.Utils
+import linearcodes.utils.BinaryMatrix
+import linearcodes.utils.Utils
 
 /**
  * ([n], [k]) LDPC code
  */
-class LdpcCodeImpl : LdpcCode {
+class LdpcCode : BlockCode {
 
     private val checkMatrix = BinaryMatrix.ofInts(listOf(
             listOf(0, 1, 1, 1, 0, 1, 0, 0, 0, 0),
