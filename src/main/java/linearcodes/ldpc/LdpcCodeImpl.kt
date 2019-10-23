@@ -38,7 +38,11 @@ class LdpcCodeImpl : LdpcCode {
         require(input.length == n) { "Encoded block size must be $n" }
         val inputDigits = Utils.stringToList(input)
         val syndrome = BinaryMatrix.ofBytes(listOf(inputDigits)).mult(checkMatrix.transpose())
-        require(syndrome.isZero()) { "Syndrome is not zero. Encoded block contains errors." }
-        return Utils.listToString(inputDigits)
+        val outputDigits = if (syndrome.isZero()) inputDigits else fixBlock(inputDigits)
+        return Utils.listToString(outputDigits.subList(0, 5))
+    }
+
+    private fun fixBlock(block: List<Byte>): List<Byte> {
+        return block;
     }
 }

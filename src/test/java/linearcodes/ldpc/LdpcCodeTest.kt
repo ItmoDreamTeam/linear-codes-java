@@ -1,6 +1,7 @@
 package linearcodes.ldpc
 
 import org.junit.Test
+import java.util.concurrent.ThreadLocalRandom
 import kotlin.test.assertEquals
 import kotlin.test.fail
 
@@ -13,6 +14,16 @@ class LdpcCodeTest {
         iterateOverAllInputs {
             val encoded = ldpcCode.encodeBlock(it)
             val decoded = ldpcCode.decodeBlock(encoded)
+            assertEquals(it, decoded)
+        }
+    }
+
+    @Test
+    fun testEncodingAndDecodingWithErrors() {
+        iterateOverAllInputs {
+            val encoded = ldpcCode.encodeBlock(it)
+            val spoiledEncoded = makeError(encoded)
+            val decoded = ldpcCode.decodeBlock(spoiledEncoded)
             assertEquals(it, decoded)
         }
     }
@@ -40,5 +51,12 @@ class LdpcCodeTest {
                 }
             }
         }
+    }
+
+    private fun makeError(block: String): String {
+        val errorBitIndex = ThreadLocalRandom.current().nextInt(block.length)
+        val result = StringBuilder(block)
+        result[errorBitIndex] = if (block[errorBitIndex] == '0') '1' else '0'
+        return result.toString()
     }
 }
