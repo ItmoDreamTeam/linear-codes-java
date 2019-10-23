@@ -62,11 +62,9 @@ class BinaryMatrix(val content: List<List<Int>>) {
 
         private fun computeMultElement(a: BinaryMatrix, b: BinaryMatrix, rowIndex: Int, colIndex: Int): Int {
             var sum = 0
-            for (aColIndex in a.content[0].indices) {
-                for (bRowIndex in b.content.indices) {
-                    sum += a.content[rowIndex][aColIndex] * b.content[bRowIndex][colIndex]
-                    sum %= 2
-                }
+            for (i in a.content[0].indices) {
+                sum += a.content[rowIndex][i] * b.content[i][colIndex]
+                sum %= 2
             }
             return sum
         }
