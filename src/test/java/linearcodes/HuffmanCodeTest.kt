@@ -10,6 +10,27 @@ class HuffmanCodeTest {
     private val huffmanCode = HuffmanCode()
 
     @Test
+    fun demo() {
+        val encodedSymbols = huffmanCode.apply(setOf(
+                Symbol("H", 0.200),
+                Symbol("E", 0.406),
+                Symbol("L", 0.134),
+                Symbol("O", 0.260)
+        ))
+        val model = HuffmanCodeModel(encodedSymbols)
+        val message = "HELLO"
+        val encodedMessage = model.encodeBlock(message)
+        val decodedMessage = model.decodeBlock(encodedMessage)
+        assertEquals(message, decodedMessage)
+
+        encodedSymbols.forEach { println("${it.value}\t%.3f\t${it.codeword}".format(it.frequency)) }
+        println("Entropy = ${model.entropy()}")
+        println("Mean codeword length = ${model.meanCodewordLength()}")
+        println("Encoded message: $encodedMessage")
+        println("Decoded message: $decodedMessage")
+    }
+
+    @Test
     fun test() {
         val encodedSymbols = huffmanCode.apply(setOf(
                 Symbol("a", 0.50),
