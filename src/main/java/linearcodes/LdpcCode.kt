@@ -5,23 +5,24 @@ import linearcodes.utils.Utils
 
 /**
  * ([n], [k]) LDPC code
+ * [Article](https://shodhganga.inflibnet.ac.in/bitstream/10603/18696/10/10_chapter%203.pdf)
  */
 class LdpcCode : BlockCode {
 
     private val checkMatrix = BinaryMatrix.ofInts(listOf(
-            listOf(0, 1, 1, 1, 0, 1, 0, 0, 0, 0),
-            listOf(1, 0, 1, 0, 0, 0, 1, 0, 0, 0),
-            listOf(1, 0, 1, 0, 1, 0, 0, 1, 0, 0),
-            listOf(0, 0, 1, 1, 1, 0, 0, 0, 1, 0),
-            listOf(1, 1, 0, 0, 1, 0, 0, 0, 0, 1)
+            listOf(1, 1, 0, 1, 0, 1, 0, 0, 1, 0),
+            listOf(0, 1, 1, 0, 1, 0, 1, 1, 0, 0),
+            listOf(1, 0, 0, 0, 1, 1, 0, 0, 1, 1),
+            listOf(0, 1, 1, 1, 0, 1, 1, 0, 0, 0),
+            listOf(1, 0, 1, 0, 1, 0, 0, 1, 0, 1),
+            listOf(0, 0, 0, 1, 0, 0, 1, 1, 1, 1)
     ))
 
     private val generatorMatrix = BinaryMatrix.ofInts(listOf(
-            listOf(1, 0, 0, 0, 0, 0, 1, 1, 0, 1),
-            listOf(0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
-            listOf(0, 0, 1, 0, 0, 1, 1, 1, 1, 0),
-            listOf(0, 0, 0, 1, 0, 1, 0, 0, 1, 0),
-            listOf(0, 0, 0, 0, 1, 0, 0, 1, 1, 1)
+            listOf(1, 0, 0, 1, 1, 0, 1, 0, 0, 0),
+            listOf(0, 0, 0, 1, 1, 1, 0, 1, 0, 0),
+            listOf(0, 0, 1, 1, 1, 0, 0, 0, 1, 0),
+            listOf(0, 1, 0, 1, 1, 0, 0, 0, 0, 1)
     ))
 
     private val k = generatorMatrix.height
@@ -40,7 +41,7 @@ class LdpcCode : BlockCode {
         val inputDigits = Utils.stringToList(input)
         val syndrome = BinaryMatrix.ofBytes(listOf(inputDigits)).mult(checkMatrix.transpose())
         val outputDigits = if (syndrome.isZero()) inputDigits else fixBlock(inputDigits)
-        return Utils.listToString(outputDigits.subList(0, k))
+        return Utils.listToString(outputDigits.subList(n - k, n))
     }
 
     private fun fixBlock(block: List<Byte>): List<Byte> {

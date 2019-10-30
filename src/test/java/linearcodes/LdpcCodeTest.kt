@@ -44,9 +44,7 @@ class LdpcCodeTest {
             for (d2 in 0..1) {
                 for (d3 in 0..1) {
                     for (d4 in 0..1) {
-                        for (d5 in 0..1) {
-                            action("" + d1 + d2 + d3 + d4 + d5)
-                        }
+                        action("" + d1 + d2 + d3 + d4)
                     }
                 }
             }
