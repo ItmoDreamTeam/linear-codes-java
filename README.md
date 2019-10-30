@@ -6,6 +6,10 @@
     <td>✔</td>    
 </tr>
 <tr>
+    <td><a href="https://github.com/ItmoDreamTeam/linear-codes/blob/master/src/main/java/linearcodes/HuffmanCode.kt">Huffman Prefix Code</a></td>
+    <td></td>    
+</tr>
+<tr>
     <td><a href="https://github.com/ItmoDreamTeam/linear-codes/blob/master/src/main/java/linearcodes/LdpcCode.kt">Low-Density Parity-Check Block Code</a></td>
     <td></td>    
 </tr>
