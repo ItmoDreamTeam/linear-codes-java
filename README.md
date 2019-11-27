@@ -16,11 +16,11 @@
     <td>✔</td>    
 </tr>
 <tr>
-    <td><a href="https://github.com/ItmoDreamTeam/linear-codes/blob/master/src/main/java/linearcodes/ReedSolomonCode.kt">Reed–Solomon Block Codes</a></td>
-    <td></td>    
+    <td><a href="https://github.com/ItmoDreamTeam/linear-codes-py/blob/master/main/bch.py">Reed–Solomon ⊂ Bose–Chaudhuri–Hocquenghem Cyclic Block Code</a></td>
+    <td>✔</td>    
 </tr>
 <tr>
-    <td><a href="https://github.com/ItmoDreamTeam/linear-codes/blob/master/src/main/java/linearcodes/BchCode.kt">Bose–Chaudhuri–Hocquenghem Cyclic Block Codes</a></td>
-    <td></td>    
+    <td><a href="https://github.com/ItmoDreamTeam/linear-codes-py/blob/master/main/golay.py">Golay Cyclic Block Code</a></td>
+    <td>✔</td>    
 </tr>
 </table>
