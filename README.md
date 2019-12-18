@@ -25,6 +25,6 @@
 </tr>
 <tr>
     <td><a href="https://github.com/ItmoDreamTeam/linear-codes/blob/master/src/main/java/linearcodes/EliasOmegaUniversalCode.kt">Elias Omega Universal Code</a></td>
-    <td></td>    
+    <td>✔</td>    
 </tr>
 </table>
